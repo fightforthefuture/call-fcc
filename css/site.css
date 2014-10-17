@@ -1,0 +1,130 @@
+.clearMe {display: block; height: 0; clear: both; font-size: 0;}
+.clear:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clear {display: inline-block;}
+/* hide IE mac \*/
+* html .clear {height: 1%;}
+.clear {display: block;}
+/* */
+
+html, body {
+    height: 100%;
+}
+body {
+    font-family: georgia, sans-serif;
+    padding-bottom: 200px;
+}
+#warning {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    background: #000;
+    color: white;
+    max-width: 300px;
+    z-index: 9002;
+}
+#warning strong {
+    display: block;
+}
+#main {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9001;
+}
+#content {
+    margin: 0px auto;
+    max-width: 800px;
+    box-sizing: border-box;
+    background: white;
+    text-align: center;
+    padding: 60px 60px;
+    position: relative;
+    -webkit-border-bottom-left-radius: 50px;
+    -moz-border-radius-bottomleft: 50px;
+    border-bottom-left-radius: 50px;
+    -webkit-border-bottom-right-radius: 50px;
+    -moz-border-radius-bottomright: 50px;
+    border-bottom-right-radius: 50px;
+}
+h1 {
+    color: #800;
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+p {
+    margin: 25px 0px;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    color: #733;
+}
+p.small {
+    font-size: 1em;
+    opacity: .6;
+    margin-left: auto;
+    margin-right: auto;
+}
+.phoneForm {
+    margin: 25px 0px 50px 0px;
+}
+.phoneForm input {
+    display: inline-block;
+    width: 66%;
+    box-sizing: border-box;
+    font-size: 1.3em;
+    padding: 0px 10px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0px;
+    border: 1px solid gray;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.phoneForm button {
+    display: inline-block;
+    width: 33%;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    height: 60px;
+    line-height: 50px;
+    margin: 0px;
+    background: #900;
+    color: white;
+    border: 0px none;
+    cursor: pointer;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.phoneForm button:hover {
+    background: #600;
+}
+li {
+    font-size: 1.3em;
+    line-height: 1.5em;
+    color: #000;
+    text-align: left;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.logo {
+    margin-top: 20px;
+    height: auto;
+    opacity: .75;
+}
+img.logo:hover {
+    opacity: 1;
+}
