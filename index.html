@@ -18,33 +18,20 @@
     <link rel="icon" type="image/png" href="images/fav.png">
 </head>
 <body>
-    <div id="warning"><strong>Under Development!</strong>This project is under development and should only be used for testing. In particular, there is no SSL.</div>
     <div id="rain"></div>
     <div id="main">
         <div id="content">
-            <h1>Don't stop calling the FCC.</h1>
-            <p>
-                The FCC could save net neutrality, or destroy it; they're deciding right now. This page will connect you, at random, to the desk of an FCC employee (our goal is to blanket the agency with calls.) When they pick up, be polite and earnest–we want to persuade them–and say:
-            </p>
-            <p>
-                "I'm calling because I'm worried that Tom Wheeler will ignore our millions of comments for Title 2 because of his history as a cable company lobbyist. Please, do everything in your power to pass real net neutrality using Title 2.”
-            </p>
+            {% include cta.html %}
             <div id="step1">
                 <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number"/><button type="button" id="call_button">Call the FCC!</button></form>
-                <p class="small">
-                    We'll connect you to a senior or mid-level employee at the FCC. If you like (and we recommend it!) you can choose to keep calling the FCC every day until they make their final decision. We won't use your phone number for anything else, we promise.
-                </p>
+                {% include disclosure.html %}
             </div>
             <div id="step2" style="display: none;">
-                <p>
-                    Here are some other fun things to ask the FCC:
-                </p>
-                <ul>
-                    <li>Stop the Comcast / Time Warner Cable merger</li>
-                    <li>Use Title II authority to reclassify the cable companies as utilities</li>
-                    <li>Have a nice day!</li>
-                </ul>
+                {% include call_started_instructions.html %}
             </div>
+            <script type="text/javascript">{% include share_tweet_text.js %}</script>
+            <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=callthefcc.com">Share on Facebook</a>
+            <a class="btn twitter" target="_blank" href="#">Share on Twitter</a>
             <a href="https://www.battleforthenet.com" target="_blank"><img class="logo" src="images/fftf_logo.png"/></a>
         </div>
     </div>

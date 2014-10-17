@@ -41,7 +41,7 @@ body {
     box-sizing: border-box;
     background: white;
     text-align: center;
-    padding: 60px 60px;
+    padding: 60px 60px 70px 60px;
     position: relative;
     -webkit-border-bottom-left-radius: 50px;
     -moz-border-radius-bottomleft: 50px;
@@ -68,7 +68,7 @@ p.small {
     margin-right: auto;
 }
 .phoneForm {
-    margin: 25px 0px 50px 0px;
+    margin: 25px 0px 45px 0px;
 }
 .phoneForm input {
     display: inline-block;
@@ -127,4 +127,34 @@ img.logo {
 }
 img.logo:hover {
     opacity: 1;
+}
+.btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    font-size: 1.0em;
+    -moz-user-select: none;
+    text-decoration: none;
+    border: 0px none;
+    border-radius: 5px;
+    font-weight: 700;
+    line-height: 50px;
+    text-transform: uppercase;
+    margin: 25px 7px 15px 7px;
+    padding: 0px 23px;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    opacity: .9;
+}
+.btn:hover {
+    opacity: 1;
+}
+.btn.facebook {
+    background-color: #3754A9;
+}
+.btn.twitter {
+    background-color: #2D98D6;
 }

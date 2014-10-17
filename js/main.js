@@ -45,7 +45,7 @@ jQuery( document ).ready(function( $ ) {
         }
 
         $.ajax({
-            url: 'http://fcc.rubbingalcoholic.com/create',
+            url: 'https://call-congress.fightforthefuture.org/create',
             type: "get",
             dataType: "json",
             data: data,
@@ -54,4 +54,14 @@ jQuery( document ).ready(function( $ ) {
             }
         });
     });
+
+    $('a.twitter').click(function(e) {
+
+        e.preventDefault();
+
+        var tw_text = encodeURIComponent(TWEET_TEXT);
+        window.open('https://twitter.com/intent/tweet?text=' + tw_text);
+
+    });
+
 });
