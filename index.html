@@ -16,23 +16,29 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/rain.js"></script>
     <link rel="icon" type="image/png" href="images/fav.png">
+    <script type="text/javascript">{% include share_tweet_text.js %}</script>
 </head>
 <body>
     <div id="rain"></div>
     <div id="main">
         <div id="content">
             {% include cta.html %}
-            <div id="step1">
-                <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number"/><button type="button" id="call_button">Call the FCC!</button></form>
-                {% include disclosure.html %}
-            </div>
-            <div id="step2" style="display: none;">
-                {% include call_started_instructions.html %}
-            </div>
-            <script type="text/javascript">{% include share_tweet_text.js %}</script>
+            {% include call_script.html %}
+            <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number"/><button type="button" id="call_button">Call the FCC!</button></form>
+            {% include disclosure.html %}
             <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=callthefcc.com">Share on Facebook</a>
             <a class="btn twitter" target="_blank" href="#">Share on Twitter</a>
             <a href="https://www.battleforthenet.com" target="_blank"><img class="logo" src="images/fftf_logo.png"/></a>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="modal">
+            <div class="inner">
+                {% include call_modal_top.html %}
+                {% include call_script.html %}
+                <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=callthefcc.com">Share on Facebook</a>
+                <a class="btn twitter" target="_blank" href="#">Share on Twitter</a>
+            </div>
         </div>
     </div>
 </body>

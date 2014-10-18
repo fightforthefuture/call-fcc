@@ -35,9 +35,6 @@ jQuery( document ).ready(function( $ ) {
         if (!validatePhone(phone))
             return alert('Please enter a valid US phone number!');
 
-        $('#step1').hide();
-        $('#step2').show();
-
         var data = {
             campaignId: 'fcc-blanket', 
             userPhone: phone,
@@ -53,6 +50,13 @@ jQuery( document ).ready(function( $ ) {
                 console.log('Placed call-congress call: ', res);
             }
         });
+        $('.overlay').css('display', 'table');
+        setTimeout(function() {
+            $('.overlay').addClass('visible');
+            setTimeout(function() {
+                $('.overlay .modal .inner').addClass('visible');
+            }, 10);
+        }, 100);
     });
 
     $('a.twitter').click(function(e) {

@@ -26,8 +26,8 @@ them to do anything in their power to protect net neutrality using Title 2.
 Daily Caller Script
 --------------------------------------------------------------------------------
 
-Hi, I'm Jeff Lyon from CallTheFCC.com and this is your daily call to the FCC to
-stop Tom Wheeler from destroying net neutrality. 
+Hi, I'm Jeff Lyon from CallTheFCC.com and this is your daily call to ask the FCC
+to stop Tom Wheeler from destroying net neutrality. 
 
 To talk to another FCC employee, press star now. To cancel and stop
 receiving these calls, press nine.
