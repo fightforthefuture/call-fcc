@@ -64,7 +64,7 @@ jQuery( document ).ready(function( $ ) {
         e.preventDefault();
 
         var tw_text = encodeURIComponent(TWEET_TEXT);
-        window.open('https://twitter.com/intent/tweet?text=' + tw_text);
+        window.open('https://twitter.com/intent/tweet?hashtags=&related=fightfortheftr&text=' + tw_text);
 
     });
 

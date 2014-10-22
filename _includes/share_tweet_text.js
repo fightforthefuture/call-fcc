@@ -1,1 +1,1 @@
-TWEET_TEXT = 'Don’t let Comcast take over half of America’s Internet. Tell Congress & @FCC to #StoptheTakeover” https://battleforthenet.com/comcast'
+TWEET_TEXT = 'The FCC could save net neutrality or destroy it. I will #CallTheFCC and demand real #netneutrality https://www.callthefcc.com/'
