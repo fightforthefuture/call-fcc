@@ -7,6 +7,10 @@ var $ES = function(selector, filter){
 	return ($(filter) || document).getElements(selector);
 };
 
+var trackOptimizely = function(ev) {
+    window['optimizely'] = window['optimizely'] || [];
+    window.optimizely.push(["trackEvent", ev]);
+};
 
 jQuery( document ).ready(function( $ ) {
 
@@ -47,6 +51,7 @@ jQuery( document ).ready(function( $ ) {
             dataType: "json",
             data: data,
             success: function(res) {
+                trackOptimizely('call_fcc');
                 console.log('Placed call-congress call: ', res);
             }
         });
@@ -63,9 +68,15 @@ jQuery( document ).ready(function( $ ) {
 
         e.preventDefault();
 
+        trackOptimizely('share');
+
         var tw_text = encodeURIComponent(TWEET_TEXT);
         window.open('https://twitter.com/intent/tweet?hashtags=&text='+ tw_text +'&related=fightfortheftr');
 
+    });
+
+    $('.a.facebook').click(function(e) {
+        trackOptimizely('share');
     });
 
 });
