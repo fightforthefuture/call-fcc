@@ -41,7 +41,7 @@ jQuery( document ).ready(function( $ ) {
 
         var data = {
             campaignId: 'fcc-blanket', 
-            userPhone: phone,
+            userPhone: validatePhone(phone),
             zipcode: '95051'
         }
 
