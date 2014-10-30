@@ -11,7 +11,8 @@ html, body {
 }
 body {
     font-family: georgia, sans-serif;
-    padding-bottom: 200px;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
 }
 #warning {
     position: fixed;
@@ -49,11 +50,16 @@ body {
     -webkit-border-bottom-right-radius: 50px;
     -moz-border-radius-bottomright: 50px;
     border-bottom-right-radius: 50px;
+    margin-bottom: 200px;
 }
 h1 {
     color: #800;
     font-size: 3em;
     margin-bottom: 30px;
+}
+hr {
+    border: 0px;
+    margin: 30px 0px 10px 0px;
 }
 p {
     margin: 25px 0px;
@@ -70,7 +76,41 @@ p.small {
 .phoneForm {
     margin: 25px 0px 45px 0px;
 }
-.phoneForm input {
+.emailForm {
+    margin: 5px 0px 0px 0px;
+    min-height: 50px;
+    position: relative;
+}
+.emailForm .thanks {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    pointer-events: none;
+    opacity: 0;
+    -ms-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -webkit-transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in;
+}
+.emailForm .thanks.visible {
+    opacity: 1;
+}
+.emailForm #email_form_fields {
+    -ms-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -webkit-transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in;
+}
+.emailForm #email_form_fields.fade {
+    opacity: 0;
+}
+form input {
     display: inline-block;
     width: 66%;
     box-sizing: border-box;
@@ -87,7 +127,11 @@ p.small {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.phoneForm button {
+form.emailForm input {
+    height: 50px;
+    line-height: 50px;
+}
+form button {
     display: inline-block;
     width: 33%;
     font-size: 1.3em;
@@ -108,14 +152,18 @@ p.small {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.phoneForm input.disabled {
+form.emailForm button {
+    height: 50px;
+    line-height: 40px;
+}
+form input.disabled {
     color: gray;
 }
-.phoneForm button.disabled {
+form button.disabled {
     background: #aaa;
     cursor: default;
 }
-.phoneForm button:hover {
+form button:hover {
     background: #600;
 }
 li {
@@ -135,8 +183,9 @@ img.logo {
 img.logo:hover {
     opacity: 1;
 }
-.btn {
+a.btn {
     display: inline-block;
+    position: relative;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
@@ -156,14 +205,59 @@ img.logo:hover {
     font-family: Helvetica, Arial, sans-serif;
     opacity: .9;
 }
-.btn:hover {
+a.btn:hover {
     opacity: 1;
 }
-.btn.facebook {
+a.btn.facebook {
     background-color: #3754A9;
 }
-.btn.twitter {
+a.btn.twitter {
     background-color: #2D98D6;
+}
+a.btn .bubble {
+    position: absolute;
+    bottom: 80px;
+    left: -60px;
+    width: 320px;
+    background: #444;
+    padding: 20px;
+    box-sizing: border-box;
+    white-space: normal;
+    font-family: Georgia, Arial, sans-serif;
+    text-transform: none;
+    font-size: 1.3em;
+    color: #fdd;
+    font-weight: normal;
+    line-height: 1.6em;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .5);
+    opacity: 0;
+    -ms-transition: opacity .2s ease-in;
+    -o-transition: opacity .2s ease-in;
+    -moz-transition: opacity .2s ease-in;
+    -webkit-transition: opacity .2s ease-in;
+    transition: opacity .2s ease-in;
+    pointer-events: none;
+}
+a.btn:hover .bubble {
+    opacity: 1;
+}
+a.btn .bubble em {
+    font-weight: bold;
+    border-bottom: 1px dotted #fdd;
+}
+.btn .bubble .arrow-down {
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    margin-left: -10px;
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #444;
 }
 .overlay {
     position: fixed;
@@ -193,7 +287,7 @@ img.logo:hover {
 .overlay .modal .inner {
     display: block;
     width: 650px;
-    padding: 30px 40px;
+    padding: 30px 40px 0px 40px;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -218,4 +312,29 @@ img.logo:hover {
 .overlay .modal .inner p.gray {
     color: gray;
     font-size: 1em;
+}
+
+.overlay .modal .bottom {
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #ddd;
+    padding: 20px 40px;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #aaa;
+    margin-left: -40px;
+}
+.overlay .modal .bottom .disclosure {
+    color: gray;
+    font-size: .9em;
+    line-height: 1.3em;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+}
+.overlay .modal .bottom .disclosure a {
+    color: #444;
 }

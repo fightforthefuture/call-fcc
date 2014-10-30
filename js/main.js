@@ -64,7 +64,28 @@ jQuery( document ).ready(function( $ ) {
         }, 100);
     });
 
-    $('a.twitter').click(function(e) {
+    $('#emailForm').submit(function(e) {
+        e.preventDefault();
+        $('#email_button').click();
+    });
+
+    $('#email_button').click(function(e) {
+
+        if (!validateEmail($('#email').val()))
+            return alert('Please enter a valid email address!');
+
+        $('#email_form_fields').addClass('fade');
+        $('.thanks').addClass('visible');
+        setTimeout(function() {
+            $('#email_form_fields').hide();
+        }, 500);
+
+        var form = $('#emailForm');
+        $.post(form.attr('action'), form.serialize(), function(data){});
+
+    });
+
+    $('a.twitter.main').click(function(e) {
 
         e.preventDefault();
 
@@ -80,3 +101,8 @@ jQuery( document ).ready(function( $ ) {
     });
 
 });
+
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 

@@ -37,7 +37,11 @@
             <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number"/><button type="button" id="call_button">Tell the FCC!</button></form>
             {% include disclosure.html %}
             <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=callthefcc.com">Share on Facebook</a>
-            <a class="btn twitter" target="_blank" href="#">Share on Twitter</a>
+            <a class="btn twitter main" target="_blank" href="#">Share on Twitter</a>
+            <div class="clear"></div>
+            <a class="twitter-timeline"  href="https://twitter.com/hashtag/CallTheFCC" data-widget-id="527826521000390657">#CallTheFCC Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <hr/>
             <a href="https://www.fightforthefuture.org/" target="_blank"><img class="logo" src="images/fftf_logo.png"/></a>
             <a href="https://demandprogress.com/" target="_blank"><img class="logo" src="images/dp_logo.png"/></a>
         </div>
@@ -47,8 +51,19 @@
             <div class="inner">
                 {% include call_modal_top.html %}
                 {% include call_script.html %}
+
                 <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=callthefcc.com">Share on Facebook</a>
-                <a class="btn twitter" target="_blank" href="#">Share on Twitter</a>
+                <a class="btn twitter" target="_blank" href="https://twitter.com/intent/tweet?hashtags=CallTheFCC&text=&related=fightfortheftr">
+                    <div class="bubble">
+                        Tweet using hashtag <em>#CallTheFcc</em> to be featured on our Twitter feed!
+                        <div class="arrow-down"></div>
+                    </div>
+                    Share on Twitter
+                </a>
+                <div class="bottom">
+                    <form id="emailForm" class="clear emailForm" action="https://queue.fightforthefuture.org/action" method="POST"><input type="hidden" name="guard" value=""/><div style="display: none;"><label for="hp_enabled"><input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label><label for="hp_disabled"><input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label></div><input type="hidden" name="tag" value="call-fcc"/><div class="thanks">Thanks! We'll be in touch!</div><div id="email_form_fields"><input id="email" name="member[email]" placeholder="Enter your email to stay in touch"/><button type="button" id="email_button">Subscribe</button></div></form>
+                    <p class="disclosure"><a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a> and <a href="http://www.demandprogress.org" target="_blank">Demand Progress</a> will contact you with campaign updates. <a href="https://www.battleforthenet.com/privacy" target="_blank">Privacy Policy</a></p>
+                </div>
             </div>
         </div>
     </div>
