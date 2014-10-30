@@ -85,7 +85,7 @@ jQuery( document ).ready(function( $ ) {
 
     });
 
-    $('a.twitter.main').click(function(e) {
+    $('a.twitter').click(function(e) {
 
         e.preventDefault();
 
