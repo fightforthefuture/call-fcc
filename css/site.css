@@ -67,6 +67,9 @@ p {
     line-height: 1.5em;
     color: #733;
 }
+p a {
+    color: #000;
+}
 p.small {
     font-size: 1em;
     opacity: .6;
@@ -179,6 +182,7 @@ img.logo {
     margin-top: 20px;
     height: auto;
     opacity: .75;
+    max-width: 100%;
 }
 img.logo:hover {
     opacity: 1;
