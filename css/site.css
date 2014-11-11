@@ -179,10 +179,11 @@ li {
     margin-right: auto;
 }
 img.logo {
-    margin-top: 20px;
+    margin: 20px 20px 10px 20px;
     height: auto;
     opacity: .75;
-    max-width: 100%;
+    max-width: 300px;
+    max-height: 70px;
 }
 img.logo:hover {
     opacity: 1;
