@@ -17,10 +17,7 @@ caller, press one.
   receiving these calls at any time by following the in-call menu or emailing
   support@callthefcc.com
 
-Alright! We're connecting you to the FCC now. When they answer, say you're
-calling because you're worried that Tom Wheeler will ignore our millions of
-comments for Title 2 because of his history as a cable company lobbyist. Ask
-them to do anything in their power to protect net neutrality using Title 2.
+Alright! We're connecting you to the FCC. When they answer, say you're calling because you agree with President Obama that the FCC needs to pass strong net neutrality rules under Title II — and it should do so this year.  Any delay hurts the cause of Net Neutrality, benefits the big cable companies that want to undermine it, and would be a betrayal of the millions who’ve spoken out.  Ask them to do anything in their power to support Net Neutrality.
 
 
 Daily Caller Script
@@ -39,8 +36,4 @@ receiving these calls, press nine.
 
 --- if user presses star
 
-Alright! We're connecting you to the FCC now. When they answer, say you're
-calling because you're worried that Tom Wheeler will ignore our millions of
-comments for Title 2 because of his history as a cable company lobbyist. And
-ask them to do anything in their power to protect net neutrality. Then, remember
-to share callthefcc.com with your friends. We need more daily callers like you!
+Alright! We're connecting you to the FCC. When they answer, say you're calling because you agree with President Obama that the FCC needs to pass strong net neutrality rules under Title II — and it should do so this year.  Any delay hurts the cause of Net Neutrality, benefits the big cable companies that want to undermine it, and would be a betrayal of the millions who’ve spoken out.  Ask them to do anything in their power to support Net Neutrality.
