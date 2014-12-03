@@ -38,11 +38,11 @@ body {
 }
 #content {
     margin: 0px auto;
-    max-width: 820px;
+    max-width: 880px;
     box-sizing: border-box;
-    background: white;
+    background: rgba(255,255,255,.6);
     text-align: center;
-    padding: 40px 60px 70px 60px;
+    padding: 40px 60px 20px 60px;
     position: relative;
     -webkit-border-bottom-left-radius: 50px;
     -moz-border-radius-bottomleft: 50px;
@@ -53,7 +53,7 @@ body {
     margin-bottom: 200px;
 }
 h1 {
-    color: #800;
+    color: #008;
     font-size: 2.4em;
     margin-bottom: 30px;
 }
@@ -65,7 +65,7 @@ p {
     margin: 25px 0px;
     font-size: 1.3em;
     line-height: 1.5em;
-    color: #733;
+    color: #337;
 }
 p a {
     color: #000;
@@ -231,7 +231,7 @@ a.btn .bubble {
     font-family: Georgia, Arial, sans-serif;
     text-transform: none;
     font-size: 1.3em;
-    color: #fdd;
+    color: #ddf;
     font-weight: normal;
     line-height: 1.6em;
     border-radius: 10px;
