@@ -1,13 +1,13 @@
 window.addEvent('domready', function() {
 	var pre	=	new Image();
-	pre.src	=	'images/heart.png';
+	pre.src	=	'images/snowflakes.png';
 	
 	start_rain.delay(200);
 });
 
 start_rain = function()
 {
-	var _rain	=	new rain('rain', 'images/heart.png', .4, 100);
+	var _rain	=	new rain('rain', 'images/snowflakes.png', .4, 100);
 }
 
 var rain	=	new Class({
