@@ -209,6 +209,7 @@ a.btn {
     color: white;
     font-family: Helvetica, Arial, sans-serif;
     opacity: .9;
+    background-color: #008;
 }
 a.btn:hover {
     opacity: 1;
