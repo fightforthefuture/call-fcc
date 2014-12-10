@@ -1,13 +1,13 @@
 window.addEvent('domready', function() {
 	var pre	=	new Image();
-	pre.src	=	'images/snowflakes.png';
+	pre.src	=	'images/heart.png';
 	
 	start_rain.delay(200);
 });
 
 start_rain = function()
 {
-	var _rain	=	new rain('rain', 'images/snowflakes.png', .4, 100);
+	var _rain	=	new rain('rain', 'images/heart.png', .4, 100);
 }
 
 var rain	=	new Class({
@@ -48,7 +48,7 @@ var rain	=	new Class({
 		}
 		
 		this.drops.each(function(img, idx) {
-			var y = parseInt(img.getStyle('top'));
+			var y = parseInt(img.getStyle('bottom'));
 			if(y >= this.coords.height)
 			{
 				//console.log('removing (remaining: '+this.drops.length+')')
@@ -74,7 +74,7 @@ var rain	=	new Class({
 		img.size	=	parseInt(100 * ((img.width / width)));
 		img.inv		=	parseInt(100 * (1 - (img.width / width)));
 		
-		var top	=	-(img.height + 10);
+		var bottom	=	-(img.height + 10);
 		
 		var left	=	Math.floor(Math.random() * (this.coords.width - img.width));
 		if(left + img.width > this.coords.right)
@@ -83,17 +83,17 @@ var rain	=	new Class({
 		}
 		
 		img.setStyles({
-			top:	top + 'px',
+			bottom:	bottom + 'px',
 			left:	left + 'px',
 			zIndex:	img.size
 		});		
 		
-		img.inject(this.container, 'top');
+		img.inject(this.container, 'bottom');
 		
 		var duration	=	this.options.speed;
 		duration		+=	(img.inv / 100) * 4 * duration;
 		
-		img.fx	=	new Fx.Tween(img, {property: 'top', duration: duration, transition: Fx.Transitions.linear}); //Fx.Transitions.Sine.easeIn
+		img.fx	=	new Fx.Tween(img, {property: 'bottom', duration: duration, transition: Fx.Transitions.linear}); //Fx.Transitions.Sine.easeIn
 		img.fx.start(this.coords.height);
 		
 		
