@@ -14,6 +14,15 @@ var trackOptimizely = function(ev) {
 
 jQuery( document ).ready(function( $ ) {
 
+    var closeOverlay = function() {
+        $('.overlay.email').removeClass('visible');
+        $('.overlay.phone').removeClass('visible');
+        setTimeout(function() {
+            $('.overlay.email').css('display', 'none');
+            $('.overlay.phone').css('display', 'none');
+        }, 500);
+    }
+
     var validatePhone = function(num) {
         num = num.replace(/\s/g, '').replace(/\(/g, '').replace(/\)/g, '');
         num = num.replace("+", "").replace(/\-/g, '');
@@ -27,14 +36,7 @@ jQuery( document ).ready(function( $ ) {
         return num;
     }
 
-    $('#phoneForm').submit(function(e) {
-        e.preventDefault();
-        $('#call_button').click();
-    });
-
-    $('#call_button').click(function(e) {
-
-        var phone = $('#phone').val();
+    var send_phone = function(phone) {
 
         if (!validatePhone(phone))
             return alert('Please enter a valid US phone number!');
@@ -55,34 +57,89 @@ jQuery( document ).ready(function( $ ) {
                 console.log('Placed call-congress call: ', res);
             }
         });
-        $('.overlay').css('display', 'table');
+        
+        $('.overlay.phone').css('display', 'table');
         setTimeout(function() {
-            $('.overlay').addClass('visible');
+            $('.overlay.phone').addClass('visible');
+            $('.overlay.email').removeClass('visible');
             setTimeout(function() {
-                $('.overlay .modal .inner').addClass('visible');
+                $('.overlay.phone .modal .inner').addClass('visible');
             }, 10);
+            setTimeout(function() {
+                $('.overlay.email').css('display', 'none');
+            }, 500);
         }, 100);
+    }
+
+    var send_email = function(email) {
+        if (!validateEmail(email))
+            return alert('Please enter a valid email address!');
+
+        $.ajax({
+            url: 'https://queue.fightforthefuture.org/email_fcc_blanket',
+            //url: 'http://debbie:9001/email_fcc_blanket',
+            type: "get",
+            dataType: "json",
+            data: {email: email},
+            success: function(res) {
+                trackOptimizely('email_fcc');
+                console.log('Sent email fcc request: ', res);
+            }
+        });
+
+        $('.overlay.email').css('display', 'table');
+        setTimeout(function() {
+            $('.overlay.email').addClass('visible');
+            $('.overlay.phone').removeClass('visible');
+            setTimeout(function() {
+                $('.overlay.email .modal .inner').addClass('visible');
+            }, 10);
+            setTimeout(function() {
+                $('.overlay.phone').css('display', 'none');
+            }, 500);
+        }, 100);
+    }
+
+    $('.overlay').click(function(e) {
+        console.log(e.target);
+        if (e.target.className.indexOf('modal') != -1)
+            closeOverlay();
+    });
+
+    $('.close').click(function(e) {
+        e.preventDefault();
+        closeOverlay();
+    });
+
+    $('#phoneForm').submit(function(e) {
+        e.preventDefault();
+        $('#call_button').click();
+    });
+    $('#phoneForm2').submit(function(e) {
+        e.preventDefault();
+        $('#phone_secondary_button').click();
+    });
+
+    $('#call_button').click(function(e) {
+        send_phone($('#phone').val());
+    });
+    $('#phone_secondary_button').click(function(e) {
+        send_phone($('#phone_secondary').val());
+    });
+    $('#email_button_main').click(function(e) {
+        send_email($('#email_main').val());
+    });
+    $('#email_button').click(function(e) {
+        send_email($('#email').val());
     });
 
     $('#emailForm').submit(function(e) {
         e.preventDefault();
         $('#email_button').click();
     });
-
-    $('#email_button').click(function(e) {
-
-        if (!validateEmail($('#email').val()))
-            return alert('Please enter a valid email address!');
-
-        $('#email_form_fields').addClass('fade');
-        $('.thanks').addClass('visible');
-        setTimeout(function() {
-            $('#email_form_fields').hide();
-        }, 500);
-
-        var form = $('#emailForm');
-        $.post(form.attr('action'), form.serialize(), function(data){});
-
+    $('#emailFormMain').submit(function(e) {
+        e.preventDefault();
+        $('#email_button_main').click();
     });
 
     $('a.twitter').click(function(e) {
@@ -100,7 +157,11 @@ jQuery( document ).ready(function( $ ) {
         trackOptimizely('share');
     });
 
+
+
 });
+
+
 
 function validateEmail(email) { 
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

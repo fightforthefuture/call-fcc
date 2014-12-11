@@ -42,7 +42,7 @@ body {
     box-sizing: border-box;
     background: white;
     text-align: center;
-    padding: 40px 60px 70px 60px;
+    padding: 40px 60px 30px 60px;
     position: relative;
     -webkit-border-bottom-left-radius: 50px;
     -moz-border-radius-bottomleft: 50px;
@@ -57,6 +57,11 @@ h1 {
     font-size: 2.4em;
     margin-bottom: 30px;
 }
+h2 {
+    color: #800;
+    font-size: 2.0em;
+    margin-bottom: 25px;
+}
 hr {
     border: 0px;
     margin: 30px 0px 10px 0px;
@@ -69,6 +74,14 @@ p {
 }
 p a {
     color: #000;
+}
+p.description {
+    font-size: 1em;
+}
+p.subscribe_info {
+    font-size: .8em;
+    opacity: .8;
+    margin-top: 10px;
 }
 p.small {
     font-size: 1em;
@@ -114,8 +127,8 @@ p.small {
     opacity: 0;
 }
 form input {
-    display: inline-block;
-    width: 66%;
+    display: block;
+    width: 100%;
     box-sizing: border-box;
     font-size: 1.3em;
     padding: 0px 10px;
@@ -123,41 +136,51 @@ form input {
     line-height: 60px;
     margin: 0px;
     border: 1px solid gray;
-    -webkit-border-top-left-radius: 10px;
-    -webkit-border-bottom-left-radius: 10px;
-    -moz-border-radius-topleft: 10px;
-    -moz-border-radius-bottomleft: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
-form.emailForm input {
+
+form.emailForm input, form.phoneForm2 input {
+    width: auto;
+    display: inline;
     height: 50px;
     line-height: 50px;
+    width: 70%;
+    text-align: left;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 form button {
-    display: inline-block;
-    width: 33%;
+    display: block;
     font-size: 1.3em;
     font-weight: bold;
     padding: 0px 10px;
     box-sizing: border-box;
-    height: 60px;
-    line-height: 50px;
-    margin: 0px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px auto;
     background: #900;
     color: white;
     border: 0px none;
     cursor: pointer;
-    -webkit-border-top-right-radius: 10px;
-    -webkit-border-bottom-right-radius: 10px;
-    -moz-border-radius-topright: 10px;
-    -moz-border-radius-bottomright: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
+
 }
-form.emailForm button {
+form.emailForm button, form.phoneForm2 button {
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     height: 50px;
+    display: inline;
     line-height: 40px;
+    width: 30%;
 }
 form input.disabled {
     color: gray;
@@ -319,6 +342,18 @@ a.btn .bubble em {
     font-size: 1em;
 }
 
+.overlay .modal .inner a.close {
+    float: right;
+    text-decoration: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 40px;
+    margin: -25px -35px 0 0;
+}
+
 .overlay .modal .bottom {
     -webkit-border-bottom-right-radius: 10px;
     -webkit-border-bottom-left-radius: 10px;
@@ -342,4 +377,21 @@ a.btn .bubble em {
 }
 .overlay .modal .bottom .disclosure a {
     color: #444;
+}
+
+.split {
+    width: 100%;
+    margin: 40px 0px;
+}
+.split > div {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 25px;
+    border-left: 1px dotted #800;
+}
+.split > div:first-child {
+    padding-left: 0px;
+    padding-right: 25px;
+    border-left: none;
 }

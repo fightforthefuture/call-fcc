@@ -34,7 +34,28 @@
     <div id="main">
         <div id="content">
             {% include cta.html %}
-            <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number & grab the script"/><button type="button" id="call_button">Call the FCC!</button></form>
+            <div class="split clear">
+                <div class="left">
+                    <h2>Call the FCC!</h2>
+                    <p class="description">
+                        Enter your phone number and we'll connect you to a random FCC employee. You can even
+                        sign up to call them every day!
+                    </p>
+                    <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number"/><button type="button" id="call_button">Get the script!</button></form>
+                </div>
+                <div class="right">
+                    <h2>Email the FCC!</h2>
+                    <p class="description">
+                        We'll email you the list of FCC employees with links to email them individually or all at once.
+                        Be sure to forward to your friends!
+                    </p>
+                    <form id="emailFormMain" class="clear emailFormMain"><input id="email_main" name="email_main" placeholder="Enter your email address"/><button type="button" id="email_button_main">Email them!</button></form>
+                    <p class="subscribe_info">
+                        <a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a> and <a href="http://www.demandprogress.org" target="_blank">Demand Progress</a> will contact you with campaign updates. <a href="https://www.battleforthenet.com/privacy" target="_blank">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+            
             {% include disclosure.html %}
             <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.callthefcc.com">Share on Facebook</a>
             <a class="btn twitter main" target="_blank" href="#">Share on Twitter</a>
@@ -46,11 +67,13 @@
             <a href="https://demandprogress.com/" target="_blank"><img class="logo" src="images/dp_logo.png"/></a>
             <a href="http://www.credoaction.com/" target="_blank"><img class="logo" src="images/credo_logo.png"/></a>
             <a href="http://www.democracyforamerica.com/" target="_blank"><img class="logo" src="images/dfa_logo.png"/></a>
+            {% include support.html %}
         </div>
     </div>
-    <div class="overlay">
+    <div class="overlay phone">
         <div class="modal">
             <div class="inner">
+                <a class="close" href="#">×</a>
                 {% include call_modal_top.html %}
                 {% include call_script.html %}
 
@@ -63,8 +86,32 @@
                     Share on Twitter
                 </a>
                 <div class="bottom">
-                    <form id="emailForm" class="clear emailForm" action="https://queue.fightforthefuture.org/action" method="POST"><input type="hidden" name="guard" value=""/><div style="display: none;"><label for="hp_enabled"><input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label><label for="hp_disabled"><input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label></div><input type="hidden" name="tag" value="call-fcc"/><input type="hidden" name="org" value="fftf_dp"/><div class="thanks">Thanks! We'll be in touch!</div><div id="email_form_fields"><input id="email" name="member[email]" placeholder="Enter your email to stay in touch"/><button type="button" id="email_button">Subscribe</button></div></form>
+                    <form id="emailForm" class="clear emailForm" method="POST"><input id="email" name="member[email]" placeholder="Enter your email to get the FCC employee list"/><button type="button" id="email_button">Email the FCC!</button></form>
                     <p class="disclosure"><a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a> and <a href="http://www.demandprogress.org" target="_blank">Demand Progress</a> will contact you with campaign updates. <a href="https://www.battleforthenet.com/privacy" target="_blank">Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay email">
+        <div class="modal">
+            <div class="inner">
+                <a class="close" href="#">×</a>
+                <h1>We're sending you the list!</h1>
+                <p>
+                    Check your email. We're sending you the list of FCC employees and their email addresses.
+                    There's also a special link that allows you to CC all of them at once. Tell them how you
+                    really feel about net neutrality!
+                </p>
+                <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.callthefcc.com">Share on Facebook</a>
+                <a class="btn twitter" target="_blank" href="https://twitter.com/intent/tweet?hashtags=CallTheFCC&text=&related=fightfortheftr">
+                    <div class="bubble">
+                        Tweet using hashtag <em>#CallTheFcc</em> to be featured on our Twitter feed!
+                        <div class="arrow-down"></div>
+                    </div>
+                    Share on Twitter
+                </a>
+                <div class="bottom">
+                    <form id="phoneForm2" class="clear phoneForm2" method="POST"><input id="phone_secondary" name="phone_secondary" placeholder="Enter your phone number to call the FCC!"/><button type="button" id="phone_secondary_button">Call the FCC!</button></div></form>
                 </div>
             </div>
         </div>
