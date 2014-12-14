@@ -29,8 +29,6 @@ var rain	=	new Class({
 		this.container	=	$(container);
 		if(!this.container) return false;
 
-		this.coords	=	this.container.getCoordinates();
-
 		var delay	=	parseInt(delay) >=0 ? delay : 0;
 		var amount	=	parseFloat(amount) < 0 || parseFloat(amount) > 1 ? .2 : amount;
 
@@ -79,6 +77,8 @@ var rain	=	new Class({
 		img.inv		=	parseInt(100 * (1 - (img.width / width)));
 
 		var bottom	=	-(img.height + 10);
+
+		this.coords	=	this.container.getCoordinates();
 
 		var left	=	Math.floor(Math.random() * (this.coords.width - img.width));
 		if(left + img.width > this.coords.right)
