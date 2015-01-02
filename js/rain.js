@@ -89,6 +89,7 @@ var rain	=	new Class({
 		img.setStyles({
 			left:	left + 'px',
 			transform: 'translate(0, ' + this.coords.height + 'px)',
+			webkitTransform: 'translate(0, ' + this.coords.height + 'px)',
 			zIndex:	img.size
 		});
 
@@ -98,8 +99,10 @@ var rain	=	new Class({
 		duration		+=	(img.inv / 100) * 4 * duration;
 
 		img.style.transition = 'all ' + (duration / 1000) + 's linear';
+		img.style.webkitTransition = 'all ' + (duration / 1000) + 's linear';
 		this.reflow(img);
 		img.style.transform  = 'translate(0, -' + img.size + 'px)';
+		img.style.webkitTransform  = 'translate(0, -' + img.size + 'px)';
 		img.expiration = Date.now() + duration + 100;
 
 		this.drops.push(img);
