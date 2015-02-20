@@ -33,29 +33,36 @@
     <div id="rain"></div>
     <div id="main">
         <div id="content">
-            {% include cta.html %}
-            <div class="split clear">
-                <div class="left">
-                    <h2>Call the FCC!</h2>
-                    <p class="description">
-                        Enter your phone number and we'll connect you to a random high-level FCC employee. You can even
-                        sign up to call every day!
-                    </p>
-                    <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number"/><button type="button" id="call_button">Get the script!</button></form>
-                </div>
-                <div class="right">
-                    <h2>Email the FCC!</h2>
-                    <p class="description">
-                        <!--
-                        We'll email you the list of FCC employees with links to email them individually or all at once.
-                        -->
-                        We'll put you in touch with a random high-level FCC employee via email.
-                        Be sure to forward to your friends!
-                    </p>
-                    <form id="emailFormMain" class="clear emailFormMain"><input id="email_main" name="email_main" placeholder="Enter your email address"/><button type="button" id="email_button_main">Email them!</button></form>
-                    <p class="subscribe_info">
-                        <a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a> <!--and <a href="http://www.demandprogress.org" target="_blank">Demand Progress</a>--> will contact you with campaign updates. <a href="https://www.battleforthenet.com/privacy" target="_blank">Privacy Policy</a>
-                    </p>
+            <h1>(Call the FCC is temporarily disabled!)</h1>
+            <p>
+                Everyone deserves a break every now and then.
+            </p>
+
+            <div style="display: none;">
+                {% include cta.html %}
+                <div class="split clear">
+                    <div class="left">
+                        <h2>Call the FCC!</h2>
+                        <p class="description">
+                            Enter your phone number and we'll connect you to a random high-level FCC employee. You can even
+                            sign up to call every day!
+                        </p>
+                        <form id="phoneForm" class="clear phoneForm"><input id="phone" name="phone" placeholder="Enter your phone number"/><button type="button" id="call_button">Get the script!</button></form>
+                    </div>
+                    <div class="right">
+                        <h2>Email the FCC!</h2>
+                        <p class="description">
+                            <!--
+                            We'll email you the list of FCC employees with links to email them individually or all at once.
+                            -->
+                            We'll put you in touch with a random high-level FCC employee via email.
+                            Be sure to forward to your friends!
+                        </p>
+                        <form id="emailFormMain" class="clear emailFormMain"><input id="email_main" name="email_main" placeholder="Enter your email address"/><button type="button" id="email_button_main">Email them!</button></form>
+                        <p class="subscribe_info">
+                            <a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a> <!--and <a href="http://www.demandprogress.org" target="_blank">Demand Progress</a>--> will contact you with campaign updates. <a href="https://www.battleforthenet.com/privacy" target="_blank">Privacy Policy</a>
+                        </p>
+                    </div>
                 </div>
             </div>
             
